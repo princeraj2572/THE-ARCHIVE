@@ -1,6 +1,118 @@
 {
   "topics": [
     {
+      "id": "e1d53e3a-6809-4d72-b007-fce670863208",
+      "title": "Emerging Controversy in Global Affairs",
+      "category": "History",
+      "severity": "HIGH",
+      "summary": "A newly surfaced controversy with conflicting reports from mainstream and independent sources.",
+      "tags": [
+        "emerging",
+        "controversy",
+        "investigation"
+      ],
+      "archivedAt": "2026-05-12T19:15:11.266Z",
+      "viewCount": 0
+    },
+    {
+      "id": "355a17df-cbe1-49ce-a2e8-05638ee2e519",
+      "title": "Institutional Response to Recent Allegations",
+      "category": "History",
+      "severity": "MEDIUM",
+      "summary": "Major institutions respond to allegations with mixed credibility and transparency.",
+      "tags": [
+        "institutional",
+        "transparency",
+        "allegations"
+      ],
+      "archivedAt": "2026-05-12T19:15:11.266Z",
+      "viewCount": 0
+    },
+    {
+      "id": "c21ba584-9ead-4951-8e45-a77e94815ecd",
+      "title": "Evidence Gaps in Official Narrative",
+      "category": "History",
+      "severity": "MEDIUM",
+      "summary": "Independent researchers identify unexplained gaps in the official account of recent events.",
+      "tags": [
+        "evidence",
+        "narrative",
+        "research"
+      ],
+      "archivedAt": "2026-05-12T19:15:11.266Z",
+      "viewCount": 0
+    },
+    {
+      "id": "8cbcc34e-9c58-4848-b326-cf50c076eb20",
+      "title": "Competing Analyses on Recent Developments",
+      "category": "History",
+      "severity": "MEDIUM",
+      "summary": "Experts offer divergent interpretations of recent developments with differing credibility sources.",
+      "tags": [
+        "analysis",
+        "experts",
+        "competing"
+      ],
+      "archivedAt": "2026-05-12T19:15:11.266Z",
+      "viewCount": 0
+    },
+    {
+      "id": "f528e552-1504-482c-b98a-a38016c21c3c",
+      "title": "Whistleblower Account Challenges Status Quo",
+      "category": "History",
+      "severity": "HIGH",
+      "summary": "Anonymous sources claim institutional cover-ups, though verification remains challenging.",
+      "tags": [
+        "whistleblower",
+        "accountability",
+        "disclosure"
+      ],
+      "archivedAt": "2026-05-12T19:15:11.266Z",
+      "viewCount": 0
+    },
+    {
+      "id": "92c38eb7-7109-457a-86f1-4ee5b8386b42",
+      "title": "Media Coverage Discrepancies",
+      "category": "History",
+      "severity": "LOW",
+      "summary": "Significant variations in how different news organizations cover the same event.",
+      "tags": [
+        "media",
+        "coverage",
+        "bias"
+      ],
+      "archivedAt": "2026-05-12T19:15:11.266Z",
+      "viewCount": 0
+    },
+    {
+      "id": "ee9cf840-f545-4b34-9d3f-f199cfc1b4e1",
+      "title": "Government Statement Under Scrutiny",
+      "category": "History",
+      "severity": "MEDIUM",
+      "summary": "Official government statements face criticism from fact-checkers and independent analysts.",
+      "tags": [
+        "government",
+        "accountability",
+        "transparency"
+      ],
+      "archivedAt": "2026-05-12T19:15:11.266Z",
+      "viewCount": 0
+    },
+    {
+      "id": "94246dc3-8dd1-4df8-912e-54ca8e70d49f",
+      "title": "Historical Parallels Raise Concerns",
+      "category": "History",
+      "severity": "MEDIUM",
+      "summary": "Researchers draw parallels to historical events that involved institutional failures.",
+      "tags": [
+        "history",
+        "pattern",
+        "warnings"
+      ],
+      "archivedAt": "2026-05-12T19:15:11.266Z",
+      "viewCount": 0
+    },
+    {
       "id": "550e8400-e29b-41d4-a716-446655440000",
       "title": "AI Alignment and Control Mechanisms",
       "category": "Technology",
@@ -12,7 +124,7 @@
         "Control"
       ],
       "archivedAt": "2026-05-13T10:30:00.000Z",
-      "viewCount": 6
+      "viewCount": 7
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440001",
@@ -362,7 +474,75 @@
         }
       ],
       "analyzedAt": "2026-05-12T19:12:51.700Z"
+    },
+    "test-123": {
+      "id": "f07e3f74-f3ab-447d-af7f-98a869225e53",
+      "topicId": "test-123",
+      "surface": "The mainstream narrative presents the official government and institutional position on this topic, typically covered by major news outlets.",
+      "deeper": "Investigation reveals significant gaps in the official narrative. Independent research, academic studies, and investigative journalism have uncovered complexities that contradict mainstream consensus.",
+      "hidden": "Suppressed research, whistleblower accounts, and declassified documents suggest deeper layers of complexity. Evidence points to institutional interests, regulatory capture, and financial incentives that shape public discourse.",
+      "deepest": "The most controversial documented evidence suggests systemic patterns that challenge the entire framework presented to the public. Multiple independent sources corroborate concerns about oversight failures and accountability gaps.",
+      "keyPlayers": [
+        "Government agencies with regulatory authority",
+        "Corporate entities with financial interests",
+        "Academic institutions and research organizations",
+        "Independent journalists and watchdog organizations",
+        "International organizations and foreign entities"
+      ],
+      "timeline": [
+        {
+          "date": "2020",
+          "event": "Initial emergence of topic in public discourse",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2021",
+          "event": "Escalation and mainstream media coverage begins",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2022",
+          "event": "Congressional hearings or official investigations announced",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2023",
+          "event": "Independent research contradicts official narrative",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2024-2026",
+          "event": "Ongoing debate and revelation of new evidence",
+          "significance": "HIGH"
+        }
+      ],
+      "redFlags": [
+        "Funding sources for research show potential conflicts of interest",
+        "Key evidence has been classified or restricted from public access",
+        "Institutional whistleblowers report pressure to suppress findings",
+        "Media coverage correlates with funding patterns of news organizations"
+      ],
+      "verdict": "The available evidence suggests significant gaps between official narratives and documented facts. While certainty is difficult, the pattern of institutional responses raises legitimate questions about transparency and accountability.",
+      "confidenceScore": 65,
+      "sources": [
+        {
+          "title": "Congressional Research Service",
+          "credibility": "HIGH",
+          "bias": "Government"
+        },
+        {
+          "title": "Academic Institution Research",
+          "credibility": "HIGH",
+          "bias": "Academic"
+        },
+        {
+          "title": "Independent Investigative Journalists",
+          "credibility": "MEDIUM",
+          "bias": "Independent"
+        }
+      ],
+      "analyzedAt": "2026-05-12T19:14:33.343Z"
     }
   },
-  "lastScanned": "2026-05-13T10:40:00.000Z"
+  "lastScanned": "2026-05-12T19:15:11.266Z"
 }

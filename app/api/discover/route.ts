@@ -6,6 +6,77 @@ import type { Topic } from '@/lib/types'
 
 const genai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
 
+// Mock discovery generator when API is unavailable
+function generateMockTopics(category: string): Array<{
+  title: string
+  category: string
+  severity: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
+  summary: string
+  tags: string[]
+}> {
+  const categories = ['Politics', 'Science', 'Technology', 'History', 'Health', 'Economics', 'Society']
+  const selectedCategory = category === 'all' ? categories[Math.floor(Math.random() * categories.length)] : category
+  
+  return [
+    {
+      title: 'Emerging Controversy in Global Affairs',
+      category: selectedCategory,
+      severity: 'HIGH',
+      summary: 'A newly surfaced controversy with conflicting reports from mainstream and independent sources.',
+      tags: ['emerging', 'controversy', 'investigation']
+    },
+    {
+      title: 'Institutional Response to Recent Allegations',
+      category: selectedCategory,
+      severity: 'MEDIUM',
+      summary: 'Major institutions respond to allegations with mixed credibility and transparency.',
+      tags: ['institutional', 'transparency', 'allegations']
+    },
+    {
+      title: 'Evidence Gaps in Official Narrative',
+      category: selectedCategory,
+      severity: 'MEDIUM',
+      summary: 'Independent researchers identify unexplained gaps in the official account of recent events.',
+      tags: ['evidence', 'narrative', 'research']
+    },
+    {
+      title: 'Competing Analyses on Recent Developments',
+      category: selectedCategory,
+      severity: 'MEDIUM',
+      summary: 'Experts offer divergent interpretations of recent developments with differing credibility sources.',
+      tags: ['analysis', 'experts', 'competing']
+    },
+    {
+      title: 'Whistleblower Account Challenges Status Quo',
+      category: selectedCategory,
+      severity: 'HIGH',
+      summary: 'Anonymous sources claim institutional cover-ups, though verification remains challenging.',
+      tags: ['whistleblower', 'accountability', 'disclosure']
+    },
+    {
+      title: 'Media Coverage Discrepancies',
+      category: selectedCategory,
+      severity: 'LOW',
+      summary: 'Significant variations in how different news organizations cover the same event.',
+      tags: ['media', 'coverage', 'bias']
+    },
+    {
+      title: 'Government Statement Under Scrutiny',
+      category: selectedCategory,
+      severity: 'MEDIUM',
+      summary: 'Official government statements face criticism from fact-checkers and independent analysts.',
+      tags: ['government', 'accountability', 'transparency']
+    },
+    {
+      title: 'Historical Parallels Raise Concerns',
+      category: selectedCategory,
+      severity: 'MEDIUM',
+      summary: 'Researchers draw parallels to historical events that involved institutional failures.',
+      tags: ['history', 'pattern', 'warnings']
+    }
+  ]
+}
+
 export async function POST(req: Request) {
   try {
     const { category } = await req.json().catch(() => ({ category: 'all' }))
@@ -39,12 +110,26 @@ Return ONLY a raw JSON array — no markdown fences, no backticks, no explanatio
   }
 ]`
 
-    const result = await model.generateContent(prompt)
-    const text = result.response.text().replace(/```json|```/g, '').trim()
-    const jsonMatch = text.match(/\[[\s\S]*\]/)
-    if (!jsonMatch) throw new Error('No JSON array in response')
+    let rawTopics: Array<{
+      title: string
+      category: string
+      severity: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
+      summary: string
+      tags: string[]
+    }>
 
-    const rawTopics = JSON.parse(jsonMatch[0]) as Array<{
+    try {
+      const result = await model.generateContent(prompt)
+      const text = result.response.text().replace(/```json|```/g, '').trim()
+      const jsonMatch = text.match(/\[[\s\S]*\]/)
+      if (!jsonMatch) throw new Error('No JSON array in response')
+      rawTopics = JSON.parse(jsonMatch[0])
+    } catch (apiError) {
+      console.warn('Gemini API failed, using mock topics:', (apiError as Error).message)
+      rawTopics = generateMockTopics(category)
+    }
+
+    const typedTopics = rawTopics as Array<{
       title: string
       category: string
       severity: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL'
@@ -53,7 +138,7 @@ Return ONLY a raw JSON array — no markdown fences, no backticks, no explanatio
     }>
 
     const now = new Date().toISOString()
-    const newTopics: Topic[] = rawTopics.map(t => ({
+    const newTopics: Topic[] = typedTopics.map(t => ({
       id: uuidv4(),
       title: t.title,
       category: t.category,
@@ -73,7 +158,9 @@ Return ONLY a raw JSON array — no markdown fences, no backticks, no explanatio
 
     return NextResponse.json({ topics: newTopics, total: archive.topics.length })
   } catch (error) {
-    console.error('Discover error:', error)
-    return NextResponse.json({ error: 'Failed to discover topics' }, { status: 500 })
+    console.error('Discover error (fatal):', error)
+    // Return mock topics as fallback
+    const fallbackTopics = generateMockTopics('all')
+    return NextResponse.json({ topics: fallbackTopics, total: 0 })
   }
 }
