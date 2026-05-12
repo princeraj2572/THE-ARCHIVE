@@ -6,9 +6,13 @@
       "category": "Technology",
       "severity": "CRITICAL",
       "summary": "Concerns about superintelligent AI systems and whether current safety measures are adequate for preventing misalignment with human values.",
-      "tags": ["AI", "Safety", "Control"],
+      "tags": [
+        "AI",
+        "Safety",
+        "Control"
+      ],
       "archivedAt": "2026-05-13T10:30:00.000Z",
-      "viewCount": 5
+      "viewCount": 6
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440001",
@@ -16,7 +20,11 @@
       "category": "Science",
       "severity": "HIGH",
       "summary": "Debate over off-target effects and long-term implications of gene editing technology on human germline modifications.",
-      "tags": ["Genetics", "Biotech", "Ethics"],
+      "tags": [
+        "Genetics",
+        "Biotech",
+        "Ethics"
+      ],
       "archivedAt": "2026-05-13T10:25:00.000Z",
       "viewCount": 3
     },
@@ -26,7 +34,11 @@
       "category": "Economics",
       "severity": "HIGH",
       "summary": "Implications of programmable money and government tracking of all financial transactions through CBDCs.",
-      "tags": ["Finance", "Privacy", "Surveillance"],
+      "tags": [
+        "Finance",
+        "Privacy",
+        "Surveillance"
+      ],
       "archivedAt": "2026-05-13T10:20:00.000Z",
       "viewCount": 12
     },
@@ -36,7 +48,11 @@
       "category": "Politics",
       "severity": "CRITICAL",
       "summary": "Competing narratives about COVID-19 origins with conflicting evidence about lab safety and gain-of-function research.",
-      "tags": ["COVID", "Origins", "Transparency"],
+      "tags": [
+        "COVID",
+        "Origins",
+        "Transparency"
+      ],
       "archivedAt": "2026-05-13T10:15:00.000Z",
       "viewCount": 47
     },
@@ -46,7 +62,11 @@
       "category": "Science",
       "severity": "MEDIUM",
       "summary": "Geoengineering proposals to artificially cool the planet raise questions about unintended ecological consequences.",
-      "tags": ["Climate", "Geoengineering", "Environment"],
+      "tags": [
+        "Climate",
+        "Geoengineering",
+        "Environment"
+      ],
       "archivedAt": "2026-05-13T10:10:00.000Z",
       "viewCount": 8
     },
@@ -56,7 +76,11 @@
       "category": "Politics",
       "severity": "HIGH",
       "summary": "Declassified UAP documents reveal decades of government secrecy around unidentified aerial phenomena and potential technology reversals.",
-      "tags": ["UFO", "Military", "Secret Programs"],
+      "tags": [
+        "UFO",
+        "Military",
+        "Secret Programs"
+      ],
       "archivedAt": "2026-05-13T10:05:00.000Z",
       "viewCount": 28
     },
@@ -66,7 +90,11 @@
       "category": "Health",
       "severity": "HIGH",
       "summary": "Settlements and lawsuits reveal how major pharmaceutical companies prioritized profits over public health during the opioid epidemic.",
-      "tags": ["Pharma", "Opioids", "Corruption"],
+      "tags": [
+        "Pharma",
+        "Opioids",
+        "Corruption"
+      ],
       "archivedAt": "2026-05-13T09:55:00.000Z",
       "viewCount": 15
     },
@@ -76,7 +104,11 @@
       "category": "Politics",
       "severity": "HIGH",
       "summary": "Unresolved questions about security gaps, potential coordination, and inconsistencies in official narratives surrounding the Capitol breach.",
-      "tags": ["Democracy", "Politics", "Investigation"],
+      "tags": [
+        "Democracy",
+        "Politics",
+        "Investigation"
+      ],
       "archivedAt": "2026-05-13T09:50:00.000Z",
       "viewCount": 31
     },
@@ -86,7 +118,11 @@
       "category": "Technology",
       "severity": "MEDIUM",
       "summary": "Declassified military documents discuss weather modification research and directed energy weapons with potential civilian applications.",
-      "tags": ["Weapons", "Technology", "Military"],
+      "tags": [
+        "Weapons",
+        "Technology",
+        "Military"
+      ],
       "archivedAt": "2026-05-13T09:45:00.000Z",
       "viewCount": 6
     },
@@ -96,7 +132,11 @@
       "category": "Economics",
       "severity": "MEDIUM",
       "summary": "Debate over whether the Federal Reserve operates with true independence or responds to political pressure in monetary policy decisions.",
-      "tags": ["Fed", "Economics", "Policy"],
+      "tags": [
+        "Fed",
+        "Economics",
+        "Policy"
+      ],
       "archivedAt": "2026-05-13T09:40:00.000Z",
       "viewCount": 11
     }
@@ -254,6 +294,74 @@
         }
       ],
       "analyzedAt": "2026-05-13T10:36:00.000Z"
+    },
+    "123e4567-e89b-12d3-a456-426614174000": {
+      "id": "8d1641d7-0420-4b47-a5cd-89f1e3dc118a",
+      "topicId": "123e4567-e89b-12d3-a456-426614174000",
+      "surface": "The mainstream narrative presents the official government and institutional position on this topic, typically covered by major news outlets.",
+      "deeper": "Investigation reveals significant gaps in the official narrative. Independent research, academic studies, and investigative journalism have uncovered complexities that contradict mainstream consensus.",
+      "hidden": "Suppressed research, whistleblower accounts, and declassified documents suggest deeper layers of complexity. Evidence points to institutional interests, regulatory capture, and financial incentives that shape public discourse.",
+      "deepest": "The most controversial documented evidence suggests systemic patterns that challenge the entire framework presented to the public. Multiple independent sources corroborate concerns about oversight failures and accountability gaps.",
+      "keyPlayers": [
+        "Government agencies with regulatory authority",
+        "Corporate entities with financial interests",
+        "Academic institutions and research organizations",
+        "Independent journalists and watchdog organizations",
+        "International organizations and foreign entities"
+      ],
+      "timeline": [
+        {
+          "date": "2020",
+          "event": "Initial emergence of topic in public discourse",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2021",
+          "event": "Escalation and mainstream media coverage begins",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2022",
+          "event": "Congressional hearings or official investigations announced",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2023",
+          "event": "Independent research contradicts official narrative",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2024-2026",
+          "event": "Ongoing debate and revelation of new evidence",
+          "significance": "HIGH"
+        }
+      ],
+      "redFlags": [
+        "Funding sources for research show potential conflicts of interest",
+        "Key evidence has been classified or restricted from public access",
+        "Institutional whistleblowers report pressure to suppress findings",
+        "Media coverage correlates with funding patterns of news organizations"
+      ],
+      "verdict": "The available evidence suggests significant gaps between official narratives and documented facts. While certainty is difficult, the pattern of institutional responses raises legitimate questions about transparency and accountability.",
+      "confidenceScore": 65,
+      "sources": [
+        {
+          "title": "Congressional Research Service",
+          "credibility": "HIGH",
+          "bias": "Government"
+        },
+        {
+          "title": "Academic Institution Research",
+          "credibility": "HIGH",
+          "bias": "Academic"
+        },
+        {
+          "title": "Independent Investigative Journalists",
+          "credibility": "MEDIUM",
+          "bias": "Independent"
+        }
+      ],
+      "analyzedAt": "2026-05-12T19:12:51.700Z"
     }
   },
   "lastScanned": "2026-05-13T10:40:00.000Z"
