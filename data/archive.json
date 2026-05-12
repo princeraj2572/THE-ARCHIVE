@@ -1,6 +1,118 @@
 {
   "topics": [
     {
+      "id": "d11a7464-6881-4b16-974e-b5dab742fc85",
+      "title": "Algorithmic Governance and Automated Sovereignty",
+      "category": "Technology",
+      "severity": "CRITICAL",
+      "summary": "Governments are increasingly delegating legislative and budgetary decisions to black-box AI systems, leading to a clash between democratic accountability and algorithmic efficiency. Critics argue that these systems harbor deep-seated biases that disproportionately affect marginalized populations, while states claim total objective neutrality in resource allocation.",
+      "tags": [
+        "AI",
+        "Democracy",
+        "Transparency"
+      ],
+      "archivedAt": "2026-05-12T19:22:11.346Z",
+      "viewCount": 0
+    },
+    {
+      "id": "cffd845b-39a1-482e-90fd-00ecb8053e2f",
+      "title": "The Post-Privacy Surveillance Infrastructure",
+      "category": "Politics",
+      "severity": "HIGH",
+      "summary": "The integration of biometric tracking and digital identity mandates has led to the effective dissolution of the private sphere under the guise of public safety. Significant evidence suggests that these data pipelines are being shared with private corporate conglomerates, contradicting initial state assurances of data isolation.",
+      "tags": [
+        "Surveillance",
+        "Privacy",
+        "Civil Liberties"
+      ],
+      "archivedAt": "2026-05-12T19:22:11.346Z",
+      "viewCount": 0
+    },
+    {
+      "id": "30792a1c-e6c2-4fb7-87b9-5f882159ec6f",
+      "title": "Synthetic Biology and Pandemic Attribution",
+      "category": "Science",
+      "severity": "CRITICAL",
+      "summary": "The rapid advancement of gain-of-function research in decentralized labs has outpaced current international oversight frameworks. Debates persist regarding whether recent localized outbreaks were naturally occurring or the result of laboratory containment failures, despite mainstream institutions consistently pointing to zoonotic origins.",
+      "tags": [
+        "Biosecurity",
+        "Research",
+        "Public Health"
+      ],
+      "archivedAt": "2026-05-12T19:22:11.346Z",
+      "viewCount": 0
+    },
+    {
+      "id": "d5b5b5e1-1b35-4ebe-a6fd-cccaa3e5754c",
+      "title": "Deglobalization and Strategic Resource Sequestration",
+      "category": "Economics",
+      "severity": "HIGH",
+      "summary": "Global supply chains are fracturing as nations transition toward autarky in critical minerals and semiconductors. There is a marked discrepancy between government-reported economic health and the empirical data showing systemic fragility and the rise of illicit black-market trade networks for essential components.",
+      "tags": [
+        "Trade",
+        "Economics",
+        "Geopolitics"
+      ],
+      "archivedAt": "2026-05-12T19:22:11.346Z",
+      "viewCount": 0
+    },
+    {
+      "id": "0031315f-5955-4afd-aff5-eaedbec77ac1",
+      "title": "Hyper-Local Digital Currency Implementation",
+      "category": "Economics",
+      "severity": "MEDIUM",
+      "summary": "The rollout of central bank digital currencies (CBDCs) is being framed as an upgrade to financial inclusion, yet independent researchers highlight their capacity for conditional spending and social credit-style censorship. This has sparked a rift between proponents of state-led digitalization and advocates for decentralized financial autonomy.",
+      "tags": [
+        "Finance",
+        "Banking",
+        "Policy"
+      ],
+      "archivedAt": "2026-05-12T19:22:11.346Z",
+      "viewCount": 0
+    },
+    {
+      "id": "8cd3788a-778a-407e-a2e8-1bd7451636f0",
+      "title": "The Crisis of Historical Revisionism in Education",
+      "category": "Society",
+      "severity": "MEDIUM",
+      "summary": "Legislative pushes to mandate specific national narratives in textbooks have ignited fierce debate over the role of education in state-building versus historical accuracy. Critics argue these policies are a form of institutional gaslighting, while officials assert that a cohesive narrative is essential for maintaining social order.",
+      "tags": [
+        "Education",
+        "Culture",
+        "Ideology"
+      ],
+      "archivedAt": "2026-05-12T19:22:11.346Z",
+      "viewCount": 0
+    },
+    {
+      "id": "51f37f54-2866-4edd-bdfc-f16df968184b",
+      "title": "Climate Geoengineering and Unilateral Atmospheric Control",
+      "category": "Science",
+      "severity": "CRITICAL",
+      "summary": "Several nations have begun small-scale, unauthorized experiments in solar radiation management to combat localized drought and extreme heat. This has led to international tensions regarding the lack of global consensus and the potential for unintended, catastrophic consequences in neighboring regions.",
+      "tags": [
+        "Environment",
+        "Climate",
+        "Global Governance"
+      ],
+      "archivedAt": "2026-05-12T19:22:11.346Z",
+      "viewCount": 0
+    },
+    {
+      "id": "fb6edfb7-570e-4882-a704-d05db6e0f099",
+      "title": "Cognitive Sovereignty and Neuro-Ethics",
+      "category": "Health",
+      "severity": "HIGH",
+      "summary": "With the rise of consumer neuro-tech, questions arise regarding the legal protections of a citizen's internal thoughts and mental data. Governments are currently exploring laws that would allow state access to 'neuro-data' for investigative purposes, sparking a clash with human rights advocates over the last frontier of privacy.",
+      "tags": [
+        "Neuroscience",
+        "Ethics",
+        "Human Rights"
+      ],
+      "archivedAt": "2026-05-12T19:22:11.346Z",
+      "viewCount": 0
+    },
+    {
       "id": "e1d53e3a-6809-4d72-b007-fce670863208",
       "title": "Emerging Controversy in Global Affairs",
       "category": "History",
@@ -96,7 +208,7 @@
         "transparency"
       ],
       "archivedAt": "2026-05-12T19:15:11.266Z",
-      "viewCount": 0
+      "viewCount": 1
     },
     {
       "id": "94246dc3-8dd1-4df8-912e-54ca8e70d49f",
@@ -124,7 +236,7 @@
         "Control"
       ],
       "archivedAt": "2026-05-13T10:30:00.000Z",
-      "viewCount": 7
+      "viewCount": 8
     },
     {
       "id": "550e8400-e29b-41d4-a716-446655440001",
@@ -542,7 +654,143 @@
         }
       ],
       "analyzedAt": "2026-05-12T19:14:33.343Z"
+    },
+    "ee9cf840-f545-4b34-9d3f-f199cfc1b4e1": {
+      "id": "4756e326-7dbc-4d5f-99fd-f1822f217d70",
+      "topicId": "ee9cf840-f545-4b34-9d3f-f199cfc1b4e1",
+      "surface": "The mainstream narrative presents the official government and institutional position on this topic, typically covered by major news outlets.",
+      "deeper": "Investigation reveals significant gaps in the official narrative. Independent research, academic studies, and investigative journalism have uncovered complexities that contradict mainstream consensus.",
+      "hidden": "Suppressed research, whistleblower accounts, and declassified documents suggest deeper layers of complexity. Evidence points to institutional interests, regulatory capture, and financial incentives that shape public discourse.",
+      "deepest": "The most controversial documented evidence suggests systemic patterns that challenge the entire framework presented to the public. Multiple independent sources corroborate concerns about oversight failures and accountability gaps.",
+      "keyPlayers": [
+        "Government agencies with regulatory authority",
+        "Corporate entities with financial interests",
+        "Academic institutions and research organizations",
+        "Independent journalists and watchdog organizations",
+        "International organizations and foreign entities"
+      ],
+      "timeline": [
+        {
+          "date": "2020",
+          "event": "Initial emergence of topic in public discourse",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2021",
+          "event": "Escalation and mainstream media coverage begins",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2022",
+          "event": "Congressional hearings or official investigations announced",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2023",
+          "event": "Independent research contradicts official narrative",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2024-2026",
+          "event": "Ongoing debate and revelation of new evidence",
+          "significance": "HIGH"
+        }
+      ],
+      "redFlags": [
+        "Funding sources for research show potential conflicts of interest",
+        "Key evidence has been classified or restricted from public access",
+        "Institutional whistleblowers report pressure to suppress findings",
+        "Media coverage correlates with funding patterns of news organizations"
+      ],
+      "verdict": "The available evidence suggests significant gaps between official narratives and documented facts. While certainty is difficult, the pattern of institutional responses raises legitimate questions about transparency and accountability.",
+      "confidenceScore": 65,
+      "sources": [
+        {
+          "title": "Congressional Research Service",
+          "credibility": "HIGH",
+          "bias": "Government"
+        },
+        {
+          "title": "Academic Institution Research",
+          "credibility": "HIGH",
+          "bias": "Academic"
+        },
+        {
+          "title": "Independent Investigative Journalists",
+          "credibility": "MEDIUM",
+          "bias": "Independent"
+        }
+      ],
+      "analyzedAt": "2026-05-12T19:15:49.813Z"
+    },
+    "test-gemini-123": {
+      "id": "7af9ce47-4da0-4f35-9fad-6c7f50aa52e1",
+      "topicId": "test-gemini-123",
+      "surface": "The mainstream narrative presents the official government and institutional position on this topic, typically covered by major news outlets.",
+      "deeper": "Investigation reveals significant gaps in the official narrative. Independent research, academic studies, and investigative journalism have uncovered complexities that contradict mainstream consensus.",
+      "hidden": "Suppressed research, whistleblower accounts, and declassified documents suggest deeper layers of complexity. Evidence points to institutional interests, regulatory capture, and financial incentives that shape public discourse.",
+      "deepest": "The most controversial documented evidence suggests systemic patterns that challenge the entire framework presented to the public. Multiple independent sources corroborate concerns about oversight failures and accountability gaps.",
+      "keyPlayers": [
+        "Government agencies with regulatory authority",
+        "Corporate entities with financial interests",
+        "Academic institutions and research organizations",
+        "Independent journalists and watchdog organizations",
+        "International organizations and foreign entities"
+      ],
+      "timeline": [
+        {
+          "date": "2020",
+          "event": "Initial emergence of topic in public discourse",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2021",
+          "event": "Escalation and mainstream media coverage begins",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2022",
+          "event": "Congressional hearings or official investigations announced",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2023",
+          "event": "Independent research contradicts official narrative",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2024-2026",
+          "event": "Ongoing debate and revelation of new evidence",
+          "significance": "HIGH"
+        }
+      ],
+      "redFlags": [
+        "Funding sources for research show potential conflicts of interest",
+        "Key evidence has been classified or restricted from public access",
+        "Institutional whistleblowers report pressure to suppress findings",
+        "Media coverage correlates with funding patterns of news organizations"
+      ],
+      "verdict": "The available evidence suggests significant gaps between official narratives and documented facts. While certainty is difficult, the pattern of institutional responses raises legitimate questions about transparency and accountability.",
+      "confidenceScore": 65,
+      "sources": [
+        {
+          "title": "Congressional Research Service",
+          "credibility": "HIGH",
+          "bias": "Government"
+        },
+        {
+          "title": "Academic Institution Research",
+          "credibility": "HIGH",
+          "bias": "Academic"
+        },
+        {
+          "title": "Independent Investigative Journalists",
+          "credibility": "MEDIUM",
+          "bias": "Independent"
+        }
+      ],
+      "analyzedAt": "2026-05-12T19:21:36.141Z"
     }
   },
-  "lastScanned": "2026-05-12T19:15:11.266Z"
+  "lastScanned": "2026-05-12T19:22:11.346Z"
 }

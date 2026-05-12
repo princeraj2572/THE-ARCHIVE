@@ -58,9 +58,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ analysis: archive.analyses[topicId] })
     }
 
-    // Deep research with Gemini 1.5 Flash (free tier, available and stable)
+    // Deep research with Gemini 3.1 Flash-Lite (optimized for high-volume tasks)
     const model = genai.getGenerativeModel({
-      model: 'gemini-1.5-flash',
+      model: 'gemini-3.1-flash-lite',
     })
 
     const prompt = `You are an investigative research analyst. Conduct deep research on: "${topicTitle}"
