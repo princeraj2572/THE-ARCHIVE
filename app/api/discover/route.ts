@@ -1,7 +1,15 @@
+/**
+ * Discovery API Endpoint
+ * POST /api/discover
+ * 
+ * Discovers new controversial topics using Gemini
+ * Optimized for high-volume, fast discovery tasks
+ */
+
 import { NextResponse } from 'next/server'
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import { v4 as uuidv4 } from 'uuid'
-import { readArchive, writeArchive } from '@/lib/archive-store'
+import { db } from '@/lib/db'
 import type { Topic } from '@/lib/types'
 
 const genai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
@@ -86,12 +94,12 @@ export async function POST(req: Request) {
         ? 'most controversial and debated topics across politics, science, technology, history, health, and society'
         : `most controversial topics in ${category}`
 
-    // Gemini 3.1 Flash-Lite (optimized for high-volume discovery tasks)
+    // Use gemini-3.1-flash-lite for fast discovery (optimized for high-volume tasks)
     const model = genai.getGenerativeModel({
       model: 'gemini-3.1-flash-lite',
     })
 
-    const prompt = `You are an investigative research AI. Search the web and identify 8 of the ${searchFocus} RIGHT NOW in ${new Date().getFullYear()}.
+    const prompt = `You are an investigative research AI. Identify 8 of the ${searchFocus} that are actively being discussed in ${new Date().getFullYear()}.
 
 Focus on topics where:
 - Official narratives clash with documented evidence
@@ -149,18 +157,53 @@ Return ONLY a raw JSON array — no markdown fences, no backticks, no explanatio
       viewCount: 0,
     }))
 
-    const archive = readArchive()
-    const existingTitles = new Set(archive.topics.map(t => t.title.toLowerCase()))
-    const uniqueNew = newTopics.filter(t => !existingTitles.has(t.title.toLowerCase()))
-    archive.topics = [...uniqueNew, ...archive.topics].slice(0, 200)
-    archive.lastScanned = now
-    writeArchive(archive)
+    // Store discovered topics in database
+    try {
+      const existingTopics = db.getTopics()
+      const existingTitles = new Set(existingTopics.map(t => t.title.toLowerCase()))
+      const uniqueNew = newTopics.filter(t => !existingTitles.has(t.title.toLowerCase()))
+      
+      for (const topic of uniqueNew) {
+        db.createTopic({
+          title: topic.title,
+          category: topic.category,
+          severity: topic.severity,
+          summary: topic.summary,
+          tags: topic.tags,
+          archivedAt: now,
+          viewCount: 0,
+        })
+      }
 
-    return NextResponse.json({ topics: newTopics, total: archive.topics.length })
+      const totalCount = db.getTopicCount()
+      
+      return NextResponse.json({
+        success: true,
+        discovered: uniqueNew.length,
+        topics: newTopics,
+        total: totalCount,
+      })
+    } catch (dbError) {
+      console.warn('Database operation failed:', dbError)
+      return NextResponse.json({
+        success: true,
+        discovered: newTopics.length,
+        topics: newTopics,
+        total: 0,
+        warning: 'Topics discovered but not stored in database'
+      })
+    }
   } catch (error) {
-    console.error('Discover error (fatal):', error)
+    const message = error instanceof Error ? error.message : 'Unknown error'
+    console.error('Discover error:', message)
+    
     // Return mock topics as fallback
     const fallbackTopics = generateMockTopics('all')
-    return NextResponse.json({ topics: fallbackTopics, total: 0 })
+    return NextResponse.json({
+      success: false,
+      error: message,
+      topics: fallbackTopics,
+      total: 0
+    }, { status: 500 })
   }
 }

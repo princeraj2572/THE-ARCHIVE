@@ -790,6 +790,74 @@
         }
       ],
       "analyzedAt": "2026-05-12T19:21:36.141Z"
+    },
+    "quick-test": {
+      "id": "13e5a6b0-0060-47ad-9f15-1df7a7293513",
+      "topicId": "quick-test",
+      "surface": "The mainstream narrative presents the official government and institutional position on this topic, typically covered by major news outlets.",
+      "deeper": "Investigation reveals significant gaps in the official narrative. Independent research, academic studies, and investigative journalism have uncovered complexities that contradict mainstream consensus.",
+      "hidden": "Suppressed research, whistleblower accounts, and declassified documents suggest deeper layers of complexity. Evidence points to institutional interests, regulatory capture, and financial incentives that shape public discourse.",
+      "deepest": "The most controversial documented evidence suggests systemic patterns that challenge the entire framework presented to the public. Multiple independent sources corroborate concerns about oversight failures and accountability gaps.",
+      "keyPlayers": [
+        "Government agencies with regulatory authority",
+        "Corporate entities with financial interests",
+        "Academic institutions and research organizations",
+        "Independent journalists and watchdog organizations",
+        "International organizations and foreign entities"
+      ],
+      "timeline": [
+        {
+          "date": "2020",
+          "event": "Initial emergence of topic in public discourse",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2021",
+          "event": "Escalation and mainstream media coverage begins",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2022",
+          "event": "Congressional hearings or official investigations announced",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2023",
+          "event": "Independent research contradicts official narrative",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2024-2026",
+          "event": "Ongoing debate and revelation of new evidence",
+          "significance": "HIGH"
+        }
+      ],
+      "redFlags": [
+        "Funding sources for research show potential conflicts of interest",
+        "Key evidence has been classified or restricted from public access",
+        "Institutional whistleblowers report pressure to suppress findings",
+        "Media coverage correlates with funding patterns of news organizations"
+      ],
+      "verdict": "The available evidence suggests significant gaps between official narratives and documented facts. While certainty is difficult, the pattern of institutional responses raises legitimate questions about transparency and accountability.",
+      "confidenceScore": 65,
+      "sources": [
+        {
+          "title": "Congressional Research Service",
+          "credibility": "HIGH",
+          "bias": "Government"
+        },
+        {
+          "title": "Academic Institution Research",
+          "credibility": "HIGH",
+          "bias": "Academic"
+        },
+        {
+          "title": "Independent Investigative Journalists",
+          "credibility": "MEDIUM",
+          "bias": "Independent"
+        }
+      ],
+      "analyzedAt": "2026-05-12T19:23:43.291Z"
     }
   },
   "lastScanned": "2026-05-12T19:22:11.346Z"

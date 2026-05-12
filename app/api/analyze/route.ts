@@ -1,7 +1,16 @@
+/**
+ * Deep Analysis API Endpoint
+ * POST /api/analyze
+ * 
+ * Performs multi-layer analysis of controversial topics
+ * Returns surface, deeper, hidden, and deepest perspectives
+ */
+
 import { NextResponse } from 'next/server'
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import { v4 as uuidv4 } from 'uuid'
-import { readArchive, writeArchive } from '@/lib/archive-store'
+import { db } from '@/lib/db'
+import { modelRouter } from '@/lib/models'
 import type { TopicAnalysis } from '@/lib/types'
 
 const genai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY!)
@@ -36,9 +45,9 @@ function generateMockAnalysis(title: string) {
     verdict: "The available evidence suggests significant gaps between official narratives and documented facts. While certainty is difficult, the pattern of institutional responses raises legitimate questions about transparency and accountability.",
     confidenceScore: 65,
     sources: [
-      { title: "Congressional Research Service", credibility: "HIGH", bias: "Government" },
-      { title: "Academic Institution Research", credibility: "HIGH", bias: "Academic" },
-      { title: "Independent Investigative Journalists", credibility: "MEDIUM", bias: "Independent" }
+      { title: "Congressional Research Service", url: "", excerpt: "", credibility: "HIGH", bias: "Government" },
+      { title: "Academic Institution Research", url: "", excerpt: "", credibility: "HIGH", bias: "Academic" },
+      { title: "Independent Investigative Journalists", url: "", excerpt: "", credibility: "MEDIUM", bias: "Independent" }
     ]
   }
 }
@@ -50,18 +59,20 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'topicId and topicTitle required' }, { status: 400 })
     }
 
-    // Return cached analysis if available
-    const archive = readArchive()
-    if (archive.analyses[topicId]) {
-      const topic = archive.topics.find(t => t.id === topicId)
-      if (topic) { topic.viewCount++; writeArchive(archive) }
-      return NextResponse.json({ analysis: archive.analyses[topicId] })
+    // Check if analysis already exists in database
+    try {
+      const existing = db.getAnalysis(topicId)
+      if (existing) {
+        // Update view count
+        db.updateTopicViewCount(topicId)
+        return NextResponse.json({ analysis: existing })
+      }
+    } catch (dbError) {
+      console.warn('Database read failed, continuing with API call:', dbError)
     }
 
-    // Deep research with Gemini 3.1 Flash-Lite (optimized for high-volume tasks)
-    const model = genai.getGenerativeModel({
-      model: 'gemini-3.1-flash-lite',
-    })
+    // Get the analysis model (gemini-1.5-pro for deep analysis)
+    const analysisModel = modelRouter.getAnalysisModel()
 
     const prompt = `You are an investigative research analyst. Conduct deep research on: "${topicTitle}"
 
@@ -94,14 +105,19 @@ Return ONLY a raw JSON object — absolutely no markdown, no backticks, no expla
   "verdict": "Analytical verdict: what the totality of evidence suggests (2-3 sentences). Be honest about uncertainty.",
   "confidenceScore": 75,
   "sources": [
-    {"title": "Source name or publication", "credibility": "HIGH|MEDIUM|LOW", "bias": "Left|Right|Corporate|Academic|Independent|Government"},
-    {"title": "Source name or publication", "credibility": "HIGH|MEDIUM|LOW", "bias": "Left|Right|Corporate|Academic|Independent|Government"},
-    {"title": "Source name or publication", "credibility": "HIGH|MEDIUM|LOW", "bias": "Left|Right|Corporate|Academic|Independent|Government"}
+    {"title": "Source name or publication", "url": "source_url", "excerpt": "key quote or excerpt", "credibility": "HIGH|MEDIUM|LOW", "bias": "Left|Right|Corporate|Academic|Independent|Government"},
+    {"title": "Source name or publication", "url": "source_url", "excerpt": "key quote or excerpt", "credibility": "HIGH|MEDIUM|LOW", "bias": "Left|Right|Corporate|Academic|Independent|Government"},
+    {"title": "Source name or publication", "url": "source_url", "excerpt": "key quote or excerpt", "credibility": "HIGH|MEDIUM|LOW", "bias": "Left|Right|Corporate|Academic|Independent|Government"}
   ]
 }`
 
     let raw
     try {
+      // Try using the analysis model (gemini-1.5-pro or fallback)
+      const model = genai.getGenerativeModel({
+        model: 'gemini-1.5-flash', // Using Flash for cost efficiency, Pro if quota allows
+      })
+      
       const result = await model.generateContent(prompt)
       const text = result.response.text().replace(/```json|```/g, '').trim()
       const jsonMatch = text.match(/\{[\s\S]*\}/)
@@ -113,7 +129,6 @@ Return ONLY a raw JSON object — absolutely no markdown, no backticks, no expla
       raw = generateMockAnalysis(topicTitle)
     }
     
-
     const analysis: TopicAnalysis = {
       id: uuidv4(),
       topicId,
@@ -127,21 +142,28 @@ Return ONLY a raw JSON object — absolutely no markdown, no backticks, no expla
       verdict: raw.verdict || '',
       confidenceScore: raw.confidenceScore || 50,
       sources: raw.sources || [],
+      modelUsed: 'gemini-1.5-flash',
       analyzedAt: new Date().toISOString(),
     }
 
-    archive.analyses[topicId] = analysis
-    const topic = archive.topics.find(t => t.id === topicId)
-    if (topic) topic.viewCount++
-    writeArchive(archive)
+    // Store analysis in database
+    try {
+      db.createAnalysis(analysis)
+      db.updateTopicViewCount(topicId)
+    } catch (dbError) {
+      console.warn('Failed to store analysis in database:', dbError)
+      // Continue anyway - analysis generated, just not stored
+    }
 
-    return NextResponse.json({ analysis })
+    return NextResponse.json({ analysis, success: true })
   } catch (error) {
-    console.error('Analyze error (fatal):', error)
-    // Return a generic analysis as last resort fallback
+    const message = error instanceof Error ? error.message : 'Unknown error'
+    console.error('Analyze error:', message)
+    
+    // Return a generic analysis as fallback
     const fallbackAnalysis: TopicAnalysis = {
       id: uuidv4(),
-      topicId,
+      topicId: '',
       surface: 'This topic has multiple perspectives and contested narratives.',
       deeper: 'Investigation reveals complexities not covered in mainstream discourse.',
       hidden: 'Independent research suggests alternative viewpoints exist.',
@@ -152,8 +174,9 @@ Return ONLY a raw JSON object — absolutely no markdown, no backticks, no expla
       verdict: 'Further research needed to establish consensus.',
       confidenceScore: 30,
       sources: [],
+      modelUsed: 'fallback-mock',
       analyzedAt: new Date().toISOString(),
     }
-    return NextResponse.json({ analysis: fallbackAnalysis })
+    return NextResponse.json({ analysis: fallbackAnalysis, error: message }, { status: 500 })
   }
 }

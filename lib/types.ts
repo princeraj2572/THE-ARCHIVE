@@ -7,7 +7,9 @@ export interface Topic {
   tags: string[]
   archivedAt: string
   viewCount: number
-  sources?: string[]
+  sources?: AnalysisSource[]
+  imageUrls?: string[] // NEW: URLs to relevant images
+  imageAnalysis?: Record<string, unknown> // NEW: extracted evidence from images
 }
 
 export interface TopicAnalysis {
@@ -24,6 +26,7 @@ export interface TopicAnalysis {
   confidenceScore: number
   sources: AnalysisSource[]
   analyzedAt: string
+  modelUsed?: string // NEW: which model performed this analysis
 }
 
 export interface TimelineEvent {
@@ -37,6 +40,10 @@ export interface AnalysisSource {
   url?: string
   credibility: 'LOW' | 'MEDIUM' | 'HIGH'
   bias?: string
+  excerpt?: string // NEW: key quote from source
+  author?: string // NEW: article author
+  publishDate?: string // NEW: publication date
+  accessDate?: string // NEW: when we fetched it
 }
 
 export interface ArchiveState {
