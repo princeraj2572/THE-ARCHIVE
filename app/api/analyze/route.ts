@@ -21,10 +21,9 @@ export async function POST(req: Request) {
       return NextResponse.json({ analysis: archive.analyses[topicId] })
     }
 
-    // Deep research with Gemini + Google Search
+    // Deep research with Gemini Pro (free tier)
     const model = genai.getGenerativeModel({
-      model: 'gemini-1.5-flash',
-      tools: [{ googleSearch: {} }] as never,
+      model: 'gemini-pro',
     })
 
     const prompt = `You are an investigative research analyst. Conduct deep research on: "${topicTitle}"

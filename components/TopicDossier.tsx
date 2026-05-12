@@ -115,7 +115,39 @@ export function TopicDossier({ topic, onClose }: Props) {
             <p className="font-mono text-[12px] text-gray-400 leading-relaxed">{topic.summary}</p>
           </div>
 
-          {/* Analysis section */}
+          {/* Topic Sources - Always show */}
+          {topic.sources && topic.sources.length > 0 && (
+            <div className="mb-6">
+              <div className="font-mono text-[10px] text-gray-600 tracking-widest mb-3 flex items-center gap-2">
+                <Shield size={10} />
+                ■ SOURCED FROM
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                {topic.sources.map((src, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex items-center gap-2 p-3 border border-amber-500/20 bg-amber-500/5 rounded-sm hover:border-amber-500/40 transition-colors"
+                  >
+                    <span className={`font-mono text-[8px] border px-2 py-1 flex-shrink-0 ${CREDIBILITY_COLOR[src.credibility]}`}>
+                      {src.credibility}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <p className="font-mono text-[11px] text-amber-100 truncate font-semibold">{src.title}</p>
+                      {src.bias && (
+                        <p className="font-mono text-[9px] text-gray-500 mt-0.5">{src.bias}</p>
+                      )}
+                    </div>
+                    {src.url && (
+                      <ExternalLink size={12} className="text-amber-500/50 flex-shrink-0" />
+                    )}
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          )}
           {!analysis && !loading && (
             <div className="text-center py-12">
               <div className="font-mono text-[10px] text-gray-600 tracking-widest mb-4">

@@ -15,10 +15,9 @@ export async function POST(req: Request) {
         ? 'most controversial and debated topics across politics, science, technology, history, health, and society'
         : `most controversial topics in ${category}`
 
-    // Gemini 1.5-flash with Google Search grounding
+    // Gemini Pro (free tier)
     const model = genai.getGenerativeModel({
-      model: 'gemini-1.5-flash',
-      tools: [{ googleSearch: {} }] as never,
+      model: 'gemini-pro',
     })
 
     const prompt = `You are an investigative research AI. Search the web and identify 8 of the ${searchFocus} RIGHT NOW in ${new Date().getFullYear()}.

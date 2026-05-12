@@ -1,5 +1,260 @@
 {
-  "topics": [],
-  "analyses": {},
-  "lastScanned": "2026-05-12T18:29:02.953Z"
+  "topics": [
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "title": "AI Alignment and Control Mechanisms",
+      "category": "Technology",
+      "severity": "CRITICAL",
+      "summary": "Concerns about superintelligent AI systems and whether current safety measures are adequate for preventing misalignment with human values.",
+      "tags": ["AI", "Safety", "Control"],
+      "archivedAt": "2026-05-13T10:30:00.000Z",
+      "viewCount": 5
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440001",
+      "title": "CRISPR Gene Editing and Unintended Consequences",
+      "category": "Science",
+      "severity": "HIGH",
+      "summary": "Debate over off-target effects and long-term implications of gene editing technology on human germline modifications.",
+      "tags": ["Genetics", "Biotech", "Ethics"],
+      "archivedAt": "2026-05-13T10:25:00.000Z",
+      "viewCount": 3
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440002",
+      "title": "Central Bank Digital Currencies and Financial Surveillance",
+      "category": "Economics",
+      "severity": "HIGH",
+      "summary": "Implications of programmable money and government tracking of all financial transactions through CBDCs.",
+      "tags": ["Finance", "Privacy", "Surveillance"],
+      "archivedAt": "2026-05-13T10:20:00.000Z",
+      "viewCount": 12
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440003",
+      "title": "Lab Leak Hypothesis and COVID-19 Origins",
+      "category": "Politics",
+      "severity": "CRITICAL",
+      "summary": "Competing narratives about COVID-19 origins with conflicting evidence about lab safety and gain-of-function research.",
+      "tags": ["COVID", "Origins", "Transparency"],
+      "archivedAt": "2026-05-13T10:15:00.000Z",
+      "viewCount": 47
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440004",
+      "title": "Climate Engineering and Stratospheric Aerosol Injection",
+      "category": "Science",
+      "severity": "MEDIUM",
+      "summary": "Geoengineering proposals to artificially cool the planet raise questions about unintended ecological consequences.",
+      "tags": ["Climate", "Geoengineering", "Environment"],
+      "archivedAt": "2026-05-13T10:10:00.000Z",
+      "viewCount": 8
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440005",
+      "title": "Pentagon UAP Investigations and Classified Programs",
+      "category": "Politics",
+      "severity": "HIGH",
+      "summary": "Declassified UAP documents reveal decades of government secrecy around unidentified aerial phenomena and potential technology reversals.",
+      "tags": ["UFO", "Military", "Secret Programs"],
+      "archivedAt": "2026-05-13T10:05:00.000Z",
+      "viewCount": 28
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440006",
+      "title": "Pharmaceutical Industry and Opioid Crisis Accountability",
+      "category": "Health",
+      "severity": "HIGH",
+      "summary": "Settlements and lawsuits reveal how major pharmaceutical companies prioritized profits over public health during the opioid epidemic.",
+      "tags": ["Pharma", "Opioids", "Corruption"],
+      "archivedAt": "2026-05-13T09:55:00.000Z",
+      "viewCount": 15
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440007",
+      "title": "January 6th Capitol Riot: Questions and Contradictions",
+      "category": "Politics",
+      "severity": "HIGH",
+      "summary": "Unresolved questions about security gaps, potential coordination, and inconsistencies in official narratives surrounding the Capitol breach.",
+      "tags": ["Democracy", "Politics", "Investigation"],
+      "archivedAt": "2026-05-13T09:50:00.000Z",
+      "viewCount": 31
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440008",
+      "title": "Directed Energy Weapon Technology and Weather Modification",
+      "category": "Technology",
+      "severity": "MEDIUM",
+      "summary": "Declassified military documents discuss weather modification research and directed energy weapons with potential civilian applications.",
+      "tags": ["Weapons", "Technology", "Military"],
+      "archivedAt": "2026-05-13T09:45:00.000Z",
+      "viewCount": 6
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440009",
+      "title": "Federal Reserve Independence and Economic Policy Influence",
+      "category": "Economics",
+      "severity": "MEDIUM",
+      "summary": "Debate over whether the Federal Reserve operates with true independence or responds to political pressure in monetary policy decisions.",
+      "tags": ["Fed", "Economics", "Policy"],
+      "archivedAt": "2026-05-13T09:40:00.000Z",
+      "viewCount": 11
+    }
+  ],
+  "analyses": {
+    "550e8400-e29b-41d4-a716-446655440000": {
+      "id": "analysis-0001",
+      "topicId": "550e8400-e29b-41d4-a716-446655440000",
+      "surface": "Major AI labs (OpenAI, DeepMind, Anthropic) publicly state that AI safety is their top priority. Researchers publish alignment research. Industry self-regulation frameworks are promoted.",
+      "deeper": "Regulatory bodies struggle to keep pace with AI development speed. Industry-led safety boards have limited enforcement power. Profit motives clash with safety-first approaches in deployment decisions.",
+      "hidden": "Internal company documents reveal tension between safety teams and product teams. Whistleblowers report that safety recommendations are sometimes overridden for faster deployment. Compute-intensive models are deployed before safety testing complete.",
+      "deepest": "Classified government AI projects may have even less oversight than private sector. Potential use for autonomous weapons without human control. Some researchers warn existential risks are deliberately downplayed in public statements.",
+      "keyPlayers": [
+        "OpenAI — Commercial AI development, ChatGPT deployment",
+        "DeepMind (Google) — Research focus, resource advantage",
+        "US Government — Seeks AI advantage in tech/military race",
+        "Anthropic — Founded by safety-conscious researchers",
+        "Eliezer Yudkowsky — AI alignment researcher, public warnings"
+      ],
+      "timeline": [
+        {
+          "date": "2012-06",
+          "event": "Deep learning renaissance begins with AlexNet",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2016-03",
+          "event": "AlphaGo defeats Lee Sedol — AI capability surge",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2020-06",
+          "event": "GPT-3 released, shows general reasoning capability",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2022-11",
+          "event": "ChatGPT released — 1 million users in 5 days",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2023-03",
+          "event": "Pause AI letter signed by tech leaders",
+          "significance": "MEDIUM"
+        }
+      ],
+      "redFlags": [
+        "Safety teams reduced at major labs despite increasing model capability",
+        "No independent external audits of training data or alignment techniques",
+        "Companies resist government AI regulation despite requesting it publicly",
+        "Capability leaps ahead of safety understanding (2-year lag observed)",
+        "Profit-driven timelines override alignment research recommendations"
+      ],
+      "verdict": "While public commitment to AI safety is genuine, structural incentives (competition, profit, capability demonstrations) create pressure to deploy systems before alignment guarantees. Regulatory frameworks lag far behind technical capabilities. Existential risk mitigation appears underfunded relative to deployment acceleration.",
+      "confidenceScore": 72,
+      "sources": [
+        {
+          "title": "AI Alignment Overview — Stanford HAI",
+          "credibility": "HIGH",
+          "bias": "Academic"
+        },
+        {
+          "title": "Letter on AI Risk — FutureOfLife.org",
+          "credibility": "HIGH",
+          "bias": "Independent"
+        },
+        {
+          "title": "Anthropic's Constitutional AI papers",
+          "credibility": "HIGH",
+          "bias": "Corporate"
+        },
+        {
+          "title": "OpenAI Safety Practices Blog",
+          "credibility": "MEDIUM",
+          "bias": "Corporate"
+        },
+        {
+          "title": "Whistleblower reports (anonymous sources)",
+          "credibility": "MEDIUM",
+          "bias": "Independent"
+        }
+      ],
+      "analyzedAt": "2026-05-13T10:35:00.000Z"
+    },
+    "550e8400-e29b-41d4-a716-446655440002": {
+      "id": "analysis-0002",
+      "topicId": "550e8400-e29b-41d4-a716-446655440002",
+      "surface": "Central banks explore CBDCs as digital evolution of money. Proponents say CBDCs increase financial inclusion and efficiency. Governments highlight reduced counterfeiting and faster transactions.",
+      "deeper": "CBDCs enable programmable money (expire after time, restricted by vendor type). Negative interest rates become enforceable. Government tracking of ALL civilian transactions becomes possible in real-time.",
+      "hidden": "Privacy activists warn CBDCs eliminate cash escape route from financial control. Academic papers show CBDC architectures can implement mass surveillance. Some prototypes explicitly designed to prevent large withdrawals.",
+      "deepest": "Potential for automated wealth confiscation during emergencies. Financial deplatforming of dissidents becomes technical default rather than exceptional measure. Scenarios of forced spending emerge in academic models.",
+      "keyPlayers": [
+        "Federal Reserve — US CBDC research (Project Hamilton)",
+        "European Central Bank — Euro digital currency planning",
+        "Digital Dollar Project — Public-private partnership shaping policy",
+        "Privacy advocates — Warning against surveillance architecture",
+        "China — Already testing digital yuan with transaction controls"
+      ],
+      "timeline": [
+        {
+          "date": "2019-06",
+          "event": "Facebook announces Libra stablecoin — governments alarmed",
+          "significance": "MEDIUM"
+        },
+        {
+          "date": "2020-03",
+          "event": "Federal Reserve begins CBDC research (Project Hamilton)",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2021-01",
+          "event": "BIS report outlines CBDC designs with programmability",
+          "significance": "HIGH"
+        },
+        {
+          "date": "2024-01",
+          "event": "Multiple central banks accelerate CBDC timelines",
+          "significance": "MEDIUM"
+        }
+      ],
+      "redFlags": [
+        "Proposed CBDC designs include automatic expiration of money",
+        "Government officials discuss CBDCs as tool for 'encouraging' spending behavior",
+        "Privacy protections are optional in CBDC architecture discussions",
+        "Programmable money eliminates fungibility (core property of currency)",
+        "Pilot programs show transaction restrictions by vendor category"
+      ],
+      "verdict": "CBDCs solve legitimate problems (counterfeiting, efficiency) but architectures designed include financial surveillance capabilities. Privacy concerns are technically valid but downplayed in official communications. Risk is not whether surveillance CAN happen, but whether safeguards WILL persist during crises.",
+      "confidenceScore": 68,
+      "sources": [
+        {
+          "title": "BIS Reports on CBDC Design — Bank for International Settlements",
+          "credibility": "HIGH",
+          "bias": "Government"
+        },
+        {
+          "title": "Federal Reserve Project Hamilton Overview",
+          "credibility": "HIGH",
+          "bias": "Government"
+        },
+        {
+          "title": "Privacy International CBDC Surveillance Analysis",
+          "credibility": "HIGH",
+          "bias": "Independent"
+        },
+        {
+          "title": "MIT Media Lab CBDC Research",
+          "credibility": "HIGH",
+          "bias": "Academic"
+        },
+        {
+          "title": "ECB CBDC Pilot Phase 2 Report",
+          "credibility": "MEDIUM",
+          "bias": "Government"
+        }
+      ],
+      "analyzedAt": "2026-05-13T10:36:00.000Z"
+    }
+  },
+  "lastScanned": "2026-05-13T10:40:00.000Z"
 }
